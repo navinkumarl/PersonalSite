@@ -5,7 +5,148 @@
 }
 
 .education-list {
-  list-style: none;
+  list-style: circle;
+}
+
+.skills-groups {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skill-group h3.skill-group-title {
+  font-size: clamp(0.875rem, 1.68vw, 1.5rem);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .skills-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .skills-groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-list .badge {
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  text-align: center;
+}
+
+.education-degree-title {
+  font-size: 1.5rem;
+}
+
+.project-title.experience-title {
+  min-height: 2.4em;
+  margin-bottom: 0;
+  font-size: clamp(1.25rem, 1.54vw, 1.375rem);
+  line-height: 1.2;
+}
+
+.project-grid .experience-subtitle,
+.publications-grid .experience-subtitle,
+.certificates-grid .experience-subtitle {
+  font-size: 1rem;
+}
+
+.publications-grid {
+  padding-bottom: 0;
+}
+
+.publication-title.project-title {
+  min-height: 2.4em;
+}
+
+.publications-grid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.publications-grid .experience-subtitle {
+  margin: auto 0 0;
+}
+
+.certificate-heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.certificates-grid .certificate-title {
+  min-height: 2.4em;
+  margin-bottom: 0;
+  font-size: clamp(1.25rem, 1.54vw, 1.375rem);
+  line-height: 1.2;
+}
+
+.certificate-heading .experience-subtitle {
+  margin: auto 0 0;
+  white-space: normal;
+}
+
+.certificates-grid article {
+  display: flex;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem 1.75rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #212529;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.contact-icon {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  fill: none;
+  stroke: #25417d;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-icon .contact-mark {
+  fill: #25417d;
+  stroke: none;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.experience-title {
+  font-size: 1.5rem;
+}
+
+.education-institution,
+.experience-subtitle {
+  font-size: 1.25rem;
 }
 
 .other-list {
@@ -15,4 +156,218 @@
 .link {
   color: rgb(33, 37, 41);
   text-decoration: none;
+}
+
+body>section>.section-container {
+  padding-right: 1.75rem !important;
+  padding-left: 1.75rem !important;
+  padding-top: 32px !important;
+  padding-bottom: 0 !important;
+}
+
+body>section#Education>.section-container {
+  padding-top: 48px !important;
+}
+
+body>section:last-of-type>.section-container {
+  padding-bottom: 48px !important;
+}
+
+.section-heading {
+  position: relative;
+  --bs-gutter-y: 0;
+  align-items: center;
+  margin-top: 0;
+}
+
+.section-heading::after {
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left: 64px;
+  border-bottom: 1px solid #dee2e6;
+  content: "";
+}
+
+.section-heading>* {
+  margin-top: 0;
+}
+
+.section-heading>.feature-icon {
+  margin-bottom: 0 !important;
+}
+
+.section-heading>h2 {
+  margin-bottom: 0;
+  padding-bottom: 0 !important;
+  border: 0 !important;
+}
+
+.section-content {
+  --bs-gutter-y: 0;
+  row-gap: 24px;
+  margin-top: 32px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.skills-groups.section-content {
+  gap: 24px;
+}
+
+.contact-links.section-content {
+  padding-bottom: 16px !important;
+}
+
+@media (min-width: 992px) {
+  .experience-primary {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .internship-columns {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body>section#Education>.section-container {
+    padding-top: max(48px, calc(100vh + 152px - 76.2vw)) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  body>section#Education>.section-container {
+    padding-top: max(48px, calc(100vh - 688px)) !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body>section#Education>.section-container {
+    padding-top: max(48px, calc(100vh - 629px)) !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-heading::after {
+    left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .education-degree-title,
+  .education-institution {
+    min-height: 2.4em;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+  .education-degree-title,
+  .experience-title {
+    font-size: 1.125rem;
+  }
+
+  .education-institution,
+  .experience-subtitle {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .about-name {
+    font-size: 1.375rem;
+    white-space: nowrap;
+  }
+
+  .about-text-column .lead {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .about-nav-row {
+    padding-top: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+  .education-degree-title,
+  .experience-title {
+    font-size: 1.375rem;
+  }
+
+  .education-institution,
+  .experience-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .education-degree-title,
+  .experience-title {
+    font-size: 1.625rem;
+  }
+
+  .about-image-column {
+    flex: 0 0 37.5%;
+    max-width: 37.5%;
+  }
+
+  .about-text-column {
+    flex: 0 0 62.5%;
+    max-width: 62.5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-main-row {
+    padding-top: 3rem !important;
+  }
+
+  .about-image-column img {
+    width: 425px;
+    max-width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .about-text-column .lead {
+    font-size: clamp(1rem, 1.25vw, 1.125rem);
+    line-height: 1.45;
+  }
+
+  .about-name {
+    font-size: clamp(2rem, 2.8vw, 2.5rem);
+    white-space: nowrap;
+  }
+
+  .about-nav-row {
+    padding-top: 6rem !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .about-name {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about-name {
+    font-size: 2.875rem;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .about-text-column .lead {
+    font-size: 1.375rem;
+    line-height: 1.45;
+  }
+
+  .about-nav-row {
+    padding-top: 5rem !important;
+    padding-bottom: 0 !important;
+  }
 }
